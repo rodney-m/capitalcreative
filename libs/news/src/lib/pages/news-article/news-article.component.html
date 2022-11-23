@@ -1,0 +1,50 @@
+<div class="header p-5">
+  <div class="container">
+    <h2 class="mt-5 pt-3">Article Detail</h2>
+  </div>
+</div>
+
+<div class="container">
+
+
+  <div class="ex-basic-1 pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <img class="img-fluid mt-5 mb-3 project-image" [src]="article.mainImageUrl" alt="article image">
+            <span class="post-category text-white bg-secondary mb-3">{{article.articleCategory.name}}</span>
+            </div>
+        </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <h2 class="my-3">{{article.title}}</h2>
+      <p my-3>{{article.tags}} </p>
+    </div>
+  </div>
+
+
+
+
+  
+  <div class="ex-basic-1 pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1">
+                <p>{{article.shortDescription}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-10 offset-xl-1" [innerHTML]="article.detailedDescription">
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

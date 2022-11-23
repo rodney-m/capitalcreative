@@ -1,0 +1,30 @@
+<div class="login-wrapper">
+    <p-card class="card-container">
+        <img src="assets/images/logo.jpg" width="200px" class="m-3 logo" alt="">
+
+        <h2>Login </h2>
+        <form [formGroup]="loginFormGroup">
+            <div class="grid mt-6">
+                <div class="col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                        <input type="text" formControlName="username" pInputText placeholder="Username" />
+                    </div>
+                    <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error">Username is required
+                    </small>
+                </div>
+                <div class="col-12">
+                    <div class="p-inputgroup">
+                        <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                        <input type="password" formControlName="password" pInputText placeholder="Password" />
+                    </div>
+                    <small *ngIf="loginForm['password'].invalid && isSubmitted" class="p-error">Password is required
+                    </small>
+                </div>
+                <div class="col-12">
+                    <p-button label="Submit" class="full-btn" styleClass="full-btn" (onClick)="onSubmit()"></p-button>
+                </div>
+            </div>
+        </form>
+    </p-card>
+</div>

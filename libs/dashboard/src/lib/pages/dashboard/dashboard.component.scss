@@ -1,0 +1,19 @@
+.stats > div{
+    height: 100px;
+    background-color: #0A1D31;
+    color: #fff;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.dashboard-item{
+    margin: 0 5px 5px 0
+}
+
+.row{
+    justify-content: space-evenly;
+}

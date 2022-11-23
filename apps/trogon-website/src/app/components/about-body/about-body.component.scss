@@ -1,0 +1,16 @@
+h2{
+    color: var(--primary-yellow);
+}
+
+ul{
+    list-style: none;
+}
+
+ul li::before {
+    content: "\2022"; 
+    color: var(--primary-yellow); 
+    font-weight: bold; 
+    display: inline-block; 
+    width: 1em; 
+    margin-left: -1em; 
+  }

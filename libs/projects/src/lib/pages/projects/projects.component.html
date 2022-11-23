@@ -1,0 +1,33 @@
+<div class="projects-page-wrapper">
+    <div class="projects-page-header">
+        <div class="container d-flex justify-content-center flex-column align-items-center">
+            <h1 class="display-5">Our Projects</h1>
+            <p class="lead">Our projects have helped the individuals, organizations and the nation at large save energy & money</p>
+
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="site-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-12">
+              <h2 class="my-5">Recent Projects</h2>
+            </div>
+          </div>
+          <div class="row">                      
+           
+            <trogon-energy-project-thumbnail [project]="project" class="col-lg-6 mb-4" *ngFor="let project of projects"></trogon-energy-project-thumbnail>             
+            
+          </div>
+          <div class="row text-center pt-5 border-top">
+            <div class="col-md-12">
+              <div class="custom-pagination">
+                <!-- <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]"></p-paginator> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

@@ -1,0 +1,32 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2017", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@env/*": ["environments/*"],
+      "@trogon-energy/articles": ["libs/articles/src/index.ts"],
+      "@trogon-energy/auth": ["libs/auth/src/index.ts"],
+      "@trogon-energy/brands": ["libs/brands/src/index.ts"],
+      "@trogon-energy/contact": ["libs/contact/src/index.ts"],
+      "@trogon-energy/core": ["libs/core/src/index.ts"],
+      "@trogon-energy/dashboard": ["libs/dashboard/src/index.ts"],
+      "@trogon-energy/news": ["libs/news/src/index.ts"],
+      "@trogon-energy/products": ["libs/products/src/index.ts"],
+      "@trogon-energy/projects": ["libs/projects/src/index.ts"],
+      "@trogon-energy/users": ["libs/users/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"]
+}

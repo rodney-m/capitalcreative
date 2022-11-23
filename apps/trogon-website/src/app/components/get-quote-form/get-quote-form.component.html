@@ -1,0 +1,115 @@
+<p-toast></p-toast>
+<div class="wrapper">
+    <div class="header p-5">
+        <div class="container">
+            <h2>Get A Quotation</h2>
+        </div>
+    </div>
+    <div class="container py-4">
+        <small style="color: var(--primary-green);">Please fill in the form below to request a quotation.</small>
+        <form class="my-5 py-5" [formGroup]="form">
+            <div class="formgrid grid">
+                <div class="field col-12 md:col-4">
+                    <label for="name">Name*</label>
+                    <input id="name" type="text" formControlName="fullName" pInputText class="inputfield w-full">
+                </div>
+                <div class="field col-12 md:col-4">
+                    <label for="email">Email*</label>
+                    <input id="email" formControlName="email" type="email" class="inputfield w-full" pInputText>
+                </div>
+                <div class="field col-12 md:col-4">
+                    <label for="phone">Phone Number*</label>
+                    <input id="phone" formControlName="phoneNumber" type="tel" class="inputfield w-full" pInputText>
+                </div>
+                <div class="field col-12 md:col-8">
+                    <label for="address">Address & Town*</label>
+                    <input id="address" formControlName="address" type="text" class="inputfield w-full" pInputText>
+                </div>
+
+
+                <div class="field col-12 md:col-4">
+                    <label for="budget">Your System Requirements*</label>
+                    <div class="field-radiobutton">
+                        <input type="radio" id="systemRequirements" formControlName="systemRequirements" value="On Grid (ZESA generally available)">
+                        <label for="systemRequirements" ><small>On Grid (ZESA generally available)</small></label>
+                    </div>
+                    <div class="field-radiobutton">
+                        <input type="radio" id="systemRequirements" formControlName="systemRequirements" value="Off Grid (No ZESA)">
+                        <label for="systemRequirements"><small>Off Grid (No ZESA)</small></label>
+                    </div>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="budget">Budget</label>
+                    <input id="budget" type="number" class="inputfield w-full" pInputText formControlName="budget">
+                </div>
+
+
+                <div class="field col-12 md:col-6">
+                    <label for="state">Choosing the right system*</label>
+                    <select id="state" class="w-full inputfield" pInputText style="appearance: auto" formControlName="choosingTheRightSystem">
+                        <option value="Increase my Energy Dependency (Off-Grid)">Increase my Energy Dependency
+                            (Off-Grid)</option>
+                        <option value="Save money on my Power Bill (Grid-Tied) System">Save money on my Power Bill
+                            (Grid-Tied) System</option>
+                        <option value="Save money on my Power Bill (Grid-Tied) System">Upgrade or Expand my existing
+                            System</option>
+                    </select>
+                    <small><em>What is your primary goal for this system?</em></small>
+                </div>
+
+                <div class="field col-12 md:col-6">
+                    <label for="state">Roof Type*</label>
+                    <select formControlName="roofType" id="state" class="w-full inputfield" pInputText style="appearance: auto">
+                        <option value="Tiles/Concrete">Tiles/Concrete</option>
+                        <option value="Chromadeck">Chromadeck</option>
+                        <option value="Asbestos">Asbestos</option>
+                        <option value="Tin">Tin</option>
+                        <option value="Thatch">Thatch</option>
+                    </select>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="state">Is your roof pitched or flat*</label>
+                    <select formControlName="roofPitchedOrFlat" id="state" class="w-full inputfield" pInputText style="appearance: auto">
+                        <option value="Pitched">Pitched</option>
+                        <option value="Flat">Flat</option>
+                        <option value="No Roofspace">No Roofspace</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-grid grid">
+                <div class="col-12 my-5">
+                    <h5>Select the appliances you would like to connect. The appliances to be connected will help
+                        determine the overall size of the required system.</h5>
+                </div>
+                <ng-container >
+                    <div *ngFor="let appliance of appliancesArray; let i = index" class="field col-12 md:col-4" >
+                        <div class="field-checkbox">
+                            <input type="checkbox"  [value]="appliance.value" [id]="appliance" (change)="onCheckBoxChange($event)">
+                            <label [for]="appliance">{{appliance.name}}</label>
+                            <!-- <p-checkbox name="appliances" [value]="appliance.value" [label]="appliance.name" id="appliance" (change)="onCheckBoxChange($event)" formArrayName="appliances"  ></p-checkbox> -->
+                        </div>
+                    </div>
+                </ng-container>
+                <div class="field col-12">
+                    <label for="budget">Other</label>
+                    <input id="budget" formControlName="otherInformation" type="text" class="inputfield w-full" pInputText>
+                </div>
+                <div class="field col-12 md:col-6">
+                    <label for="state">How Did You Hear About Us*</label>
+                    <select id="state" formControlName="howDidYouHearAboutUs" class="w-full inputfield" pInputText style="appearance: auto">
+                        <option value="Web search engine">Web search engine</option>
+                        <option value="Trogon flyer">Trogon flyer</option>
+                        <option value="Saw Trogon project">Saw Trogon project</option>
+                        <option value="Referred by previous client">Referred by previous client</option>
+                        <option value="Facebook">Facebook</option>
+                        <option value="Twitter">Twitter</option>
+                        <option value="LinkedIn">LinkedIn</option>
+                    </select>
+                </div>
+            </div>
+            <button pButton type="button" label="Submit" (click)="submit()"></button>
+        </form>
+    </div>
+
+</div>

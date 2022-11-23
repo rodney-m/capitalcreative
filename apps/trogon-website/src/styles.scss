@@ -1,0 +1,125 @@
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~animate.css/animate.css';
+@import '~primeflex/primeflex.scss';
+
+// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    color: #5F6062;
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+:root{
+    --primary-green: #00864c;
+    --primary-yellow: #F2A633;
+    --primary-red: #f80301;
+}
+
+.btn{
+    background-color: var(--primary-green)!important;
+    border: none!important;
+    border-radius: 20px;
+}
+
+
+
+// News 
+
+.news-post{
+    .post-category{
+        padding: 3px;
+        margin: 5px 0;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    a{
+        text-decoration: none;
+        color: #5F6062;
+        img{
+            height: 270px;
+            object-fit: cover;
+        }
+    }
+
+    h2{
+        font-size: 1.3rem;
+        color: #222;
+    }
+
+    figure img{
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .post-meta{
+        display: flex;
+        align-items: center;
+        font-size: .8rem;
+    }
+
+    p{
+        font-size: 1rem;
+        color: #888;  
+
+        a{
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+    }
+}
+
+// Projects 
+
+.projects-post{
+    .post-category{
+        padding: 3px;
+        margin: 5px 0;
+        border-radius: 5px;
+        display: inline-block;
+    }
+    a{
+        text-decoration: none;
+        color: #5F6062;
+        img{
+            // height: 270px;
+            // object-fit: cover;
+        }
+    }
+
+    h2{
+        font-size: 1.3rem;
+        color: #222;
+    }
+
+    figure img{
+        height: 35px;
+        border-radius: 50%;
+    }
+
+    .post-meta{
+        display: flex;
+        align-items: center;
+        font-size: .8rem;
+    }
+
+    p{
+        font-size: 1rem;
+        color: #888;  
+
+        a{
+            color: var(--primary-green);
+            font-size: 1.2rem;
+        }
+    }
+}
+
+
+

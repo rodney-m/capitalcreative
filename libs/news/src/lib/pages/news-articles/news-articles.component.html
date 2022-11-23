@@ -1,0 +1,28 @@
+<div class="header p-5">
+    <div class="container">
+        <h2 class="mt-5 pt-5">News</h2>
+    </div>
+</div>
+<div class="container">
+    <div class="site-section">
+        <div class="container">
+          <div class="row mb-5">
+            <div class="col-12">
+              <h2>Recent Posts</h2>
+            </div>
+          </div>
+          <div class="row">                      
+           
+            <trogon-energy-article-thumbnail [article]="article" class="col-lg-4 mb-4" *ngFor="let article of articles"></trogon-energy-article-thumbnail>             
+            
+          </div>
+          <div class="row text-center pt-5 border-top">
+            <div class="col-md-12">
+              <div class="custom-pagination">
+                <p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[5,10,20,30]" (onPageChange)="paginate($event)"></p-paginator>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

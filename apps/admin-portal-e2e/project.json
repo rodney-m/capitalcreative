@@ -1,0 +1,28 @@
+{
+  "root": "apps/admin-portal-e2e",
+  "sourceRoot": "apps/admin-portal-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/admin-portal-e2e/cypress.json",
+        "devServerTarget": "admin-portal:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "admin-portal:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/admin-portal-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["admin-portal"]
+}

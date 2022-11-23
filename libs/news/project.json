@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/news",
+  "sourceRoot": "libs/news/src",
+  "prefix": "trogon-energy",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/news"],
+      "options": {
+        "jestConfig": "libs/news/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/news/**/*.ts", "libs/news/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

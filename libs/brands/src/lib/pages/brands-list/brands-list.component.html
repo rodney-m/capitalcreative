@@ -1,0 +1,51 @@
+<p-toast></p-toast>
+<div class="admin-page">
+    <p-card header="Brands" subheader="List of all brands">
+        <div class="grid">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left">
+                        <p-button styleClass="p-button-success" label="New" icon="pi pi-plus" routerLink="form">
+                        </p-button>
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <p-table [value]="brands" styleClass="p-datatable-gridlines">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon>
+                            </th>
+
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-brand>
+                        <tr>
+                            <td>{{ brand.name }}</td>
+                            <td>{{ brand.description }}</td>
+                            <td>
+                                <p-button (click)="delete(brand.id)" styleClass="p-button-danger mr-2"
+                                    icon="pi pi-trash"></p-button>
+                                <p-button (click)="update(brand.id)" styleClass="p-button-success" icon="pi pi-pencil">
+                                </p-button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                <p class="text-center my-3" *ngIf="(brands.length <= 0)">No brands found...</p>
+            </div>
+
+            <div class="col-12">
+                <p-paginator [rows]="10" [totalRecords]="totalRecords" [rowsPerPageOptions]="[5,10,20,30]"
+                    (onPageChange)="paginate($event)">
+                </p-paginator>
+            </div>
+        </div>
+    </p-card>
+</div>
+<p-confirmDialog [style]="{ width: '50vw' }" [baseZIndex]="10000" rejectButtonStyleClass="p-button-text">
+</p-confirmDialog>

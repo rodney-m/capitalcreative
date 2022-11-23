@@ -1,0 +1,33 @@
+
+
+.carousel-item .overlay{
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.6);
+    // background: linear-gradient(to right, rgba(248, 1, 1, 0.6), rgba(0, 134, 76, 0.6));
+    height: calc(100vh - 85px);
+    position: absolute;
+
+}
+.carousel-caption {
+    // bottom: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-25%);
+    z-index: 10;
+}
+.carousel-item {
+    height: calc(100vh - 85px);
+}
+.carousel-item > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: calc(100vh - 85px);
+    object-fit: cover;
+}
+
+.btn,button{
+    background-color: transparent!important;
+}

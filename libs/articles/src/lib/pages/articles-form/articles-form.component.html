@@ -1,0 +1,88 @@
+<p-toast></p-toast>
+<div class="admin-page">
+    <p-card header="Add an article" subheader="You can add an article  here">
+        <div class="grid mb-5">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left"></div>
+                    <div class="p-toolbar-group-right">
+                        <p-button styleClass="p-button-primary mr-2" [label]="'Create'" icon="pi pi-plus"
+                            (click)="onSubmit()"></p-button>
+                        <p-button styleClass="p-button-secondary" label="Cancle" icon="pi pi-arrow-circle-left"
+                            (click)="onCancel()"></p-button>
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <form [formGroup]="form">
+                    <div class="p-fluid p-formgrid grid">
+                        <div class="p-field col-12">
+                            <label for="name">Title </label>
+                            <input formControlName="title" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['title'].invalid && isSubmitted" class="p-error">Title is
+                                required</small>
+                        </div>
+                        <div class="p-field col-12">
+                            <label for="email">Short Description</label>
+                            <textarea pInputTextarea formControlName="shortDescription" [rows]="4" [cols]="30"></textarea>
+                            <small *ngIf="formControls['shortDescription'].invalid && isSubmitted" class="p-error"> </small>
+                        </div>
+
+                        <div class="p-field col-6">
+                            <label for="name">Tags </label>
+                            <input formControlName="tags" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['tags'].invalid && isSubmitted" class="p-error">Tags is
+                                required</small>
+                        </div>
+                        
+                        
+
+                        <div class="p-field col-6">
+                            <label for="category">Category</label>
+                            <p-dropdown [options]="catagories" formControlName="articleCategoryId" optionLabel="name"
+                                optionValue="id" [filter]="true" filterBy="name" [showClear]="true"
+                                placeholder="Select a Category"></p-dropdown>
+                            <small *ngIf="formControls['articleCategoryId'].invalid && isSubmitted" class="p-error">
+                            </small>
+                        </div>
+                        
+
+                        <div class="p-field col-12">
+                            <label for="richDescription">Long Description</label><br />
+                            <p-editor formControlName="detailedDescription" [style]="{ height: '320px' }"></p-editor>
+                        </div>
+
+                        <!-- <div class="p-field col-6">
+                            <label for="category">Image</label>
+                            <p-fileUpload name="myfile[]" accept="image/*" [customUpload]="true" (uploadHandler)="myUploader($event)">
+                            </p-fileUpload>
+        
+                            <small *ngIf="formControls['mainImageUrl'].invalid && isSubmitted" class="p-error">
+                            </small>
+                        </div> -->
+
+                        <div class="p-field p-col-12">
+                            <label for="name">Main Image</label>
+                            <input
+                              type="file"
+                              class="p-inputtext"
+                              accept="image/*"
+                              (change)="onImageUpload($event)"
+                            />
+                            <small *ngIf="formControls['mainImageUrl'].invalid && isSubmitted" class="p-error"
+                              >Image is required</small
+                            >
+                            <div class="p-col-2 p-mt-2 p-pl-0">
+                              <img style="width: 250px" [src]="imageDisplay" alt="" />
+                            </div>
+                          </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </p-card>
+</div>

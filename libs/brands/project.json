@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/brands",
+  "sourceRoot": "libs/brands/src",
+  "prefix": "trogon-energy",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/brands"],
+      "options": {
+        "jestConfig": "libs/brands/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/brands/**/*.ts", "libs/brands/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

@@ -1,0 +1,91 @@
+<div class="header p-5">
+    <div class="container">
+        <h2 class="mt-5 pt-5">Project Details</h2>
+    </div>
+</div>
+
+<div class="py-5 px-3">
+
+    <div class="ex-basic-1 pt-5 pb-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img class="img-fluid mt-5 mb-3 project-image" [src]="project.mainImageUrl" alt="project image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table caption-top">
+            <caption class="text-center">{{project.title}}</caption>
+            <!-- <h4 class="text-center">{{project.title}}</h4> -->
+            <!-- <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead> -->
+            <tbody>
+                <tr>
+                    <th>System type:</th>
+                    <td>{{project.projectData.systemType}}</td>
+                </tr>
+                <tr>
+                    <th>Location:</th>
+                    <td>{{project.projectData.location}}</td>
+                </tr>
+                <tr>
+                    <th>PV System Size:</th>
+                    <td>{{project.projectData.pvSystemSize}}</td>
+                </tr>
+                <tr>
+                    <th>Battery System Size:</th>
+                    <td>{{project.projectData.batterySystemSize}}</td>
+                </tr>
+                <tr>
+                    <th>Panel:</th>
+                    <td>{{project.projectData.panelBrand}}</td>
+                </tr>
+                <tr>
+                    <th>Electricity Generation:</th>
+                    <td>{{project.projectData.electricityGeneration}}</td>
+                </tr>
+                <tr>
+                    <th>Estimated Co2 savings:</th>
+                    <td>{{project.projectData.estimatedCo2Savings}}</td>
+                </tr>
+                <tr>
+                    <th>Estimated lifetime benefits:</th>
+                    <td>{{project.projectData.lifetimeBenefits}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+    
+    <div class="ex-basic-1 pt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <p>{{project.shortDescription}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1" [innerHTML]="project.detailedDescription">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

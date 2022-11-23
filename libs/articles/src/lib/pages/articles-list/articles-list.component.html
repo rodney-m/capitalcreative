@@ -1,0 +1,61 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card header="News Articles" subheader="List of all articles">
+    <div class="grid">
+      <div class="col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left">
+            <p-button
+              styleClass="p-button-success"
+              label="New"
+              icon="pi pi-plus"
+              routerLink="form"
+            ></p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-12">
+        <p-table [value]="articles" styleClass="p-datatable-gridlines">
+          <ng-template pTemplate="header">
+            <tr>
+              <th pSortableColumn="title">Title <p-sortIcon field="title"></p-sortIcon></th>
+              
+              <th>Description</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th></th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-article>
+            <tr>
+              <td>{{ article.title  }}</td>
+              <td><img [src]="article.mainImageUrl" height="50px" alt="article image"></td>
+              <td>{{ article.shortDescription }}</td>
+              <td>{{ article.articleCategory.name }}</td>
+              <td>
+                <p-button
+                  (click)="deleteArticle(article.id)"
+                  styleClass="p-button-danger mr-2"
+                  icon="pi pi-trash"
+                ></p-button>
+                <p-button
+                  (click)="updateArticle(article.id)"
+                  styleClass="p-button-success"
+                  icon="pi pi-pencil"
+                ></p-button>
+              </td>
+            </tr>
+        </ng-template>
+    </p-table>
+    <p class="text-center my-3" *ngIf="!isLoading && (articles.length <= 0)">No Articles found...</p>
+      </div>
+    </div>
+  </p-card>
+</div>
+<p-confirmDialog
+  [style]="{ width: '50vw' }"
+  [baseZIndex]="10000"
+  rejectButtonStyleClass="p-button-text"
+></p-confirmDialog>

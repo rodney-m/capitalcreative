@@ -1,0 +1,128 @@
+<p-toast></p-toast>
+<div class="admin-page">
+    <p-card header="Add or edit a Project" subheader="You can add or edit a project here">
+        <div class="grid mb-5">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left"></div>
+                    <div class="p-toolbar-group-right">
+                        <p-button styleClass="p-button-primary mr-2" [label]="'Create'" icon="pi pi-plus"
+                            (click)="onSubmit()"></p-button>
+                        <p-button styleClass="p-button-secondary" label="Cancel" icon="pi pi-arrow-circle-left"
+                            (click)="onCancel()"></p-button>
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="col-12">
+                <form [formGroup]="form">
+                    <div class="p-fluid p-formgrid grid">
+                        <div class="p-field col-12">
+                            <label for="name">Project title</label>
+                            <input formControlName="title" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['title'].invalid && isSubmitted" class="p-error">Title is
+                                required</small>
+                        </div>                      
+
+
+                        <div class="p-field col-6">
+                            <label for="basic">Date commissioned</label>
+                            <p-calendar inputId="basic" formControlName="dateCommissioned" ></p-calendar>
+                            <small *ngIf="formControls['dateCommissioned'].invalid && isSubmitted" class="p-error">Date commissioned is
+                                required</small>
+                        </div>
+
+                        <div class="p-field col-6">
+                            <label for="name">Location</label>
+                            <input formControlName="location" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['location'].invalid && isSubmitted" class="p-error">Location is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">System Battery Size</label>
+                            <input formControlName="batterySystemSize" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['batterySystemSize'].invalid && isSubmitted" class="p-error">Battery size is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">Electricity generation</label>
+                            <input formControlName="electricityGeneration" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['electricityGeneration'].invalid && isSubmitted" class="p-error">Electricity generation is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">Estimated cost to savings</label>
+                            <input formControlName="estimatedCo2Savings" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['estimatedCo2Savings'].invalid && isSubmitted" class="p-error">Estimated cost to savings is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">Inverter type</label>
+                            <input formControlName="inverterType" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['inverterType'].invalid && isSubmitted" class="p-error">Inverter type is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">Life time benefits</label>
+                            <input formControlName="lifetimeBenefits" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['lifetimeBenefits'].invalid && isSubmitted" class="p-error">life time Benefits type is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">Panel Brand</label>
+                            <input formControlName="panelBrand" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['panelBrand'].invalid && isSubmitted" class="p-error">Panel barnd is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">PV System</label>
+                            <input formControlName="pvSystemSize" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['panelBrand'].invalid && isSubmitted" class="p-error">PV system is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">Special Features</label>
+                            <input formControlName="specialFeatures" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['panelBrand'].invalid && isSubmitted" class="p-error">Special features is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="name">System Type</label>
+                            <input formControlName="systemType" id="name" type="text" pInputText />
+                            <small *ngIf="formControls['systemType'].invalid && isSubmitted" class="p-error">System type is
+                                required</small>
+                        </div>
+
+                        <div class="p-field col-12">
+                            <label for="email">Short Description</label>
+                            <textarea pInputTextarea formControlName="shortDescription" [rows]="4"
+                                [cols]="30"></textarea>
+                            <small *ngIf="formControls['shortDescription'].invalid && isSubmitted" class="p-error">
+                            </small>
+                        </div>
+
+                        <div class="p-field col-12">
+                            <label for="richDescription">Detailed Description</label><br />
+                            <p-editor formControlName="detailedDescription" [style]="{ height: '320px' }"></p-editor>
+                        </div>
+
+
+                        <div class="p-field p-col-12">
+                            <label for="name">Main Image</label>
+                            <input type="file" class="p-inputtext" accept="image/*" (change)="onImageUpload($event)" />
+                            <small *ngIf="formControls['mainImageUrl'].invalid && isSubmitted" class="p-error">Image is
+                                required</small>
+                            <div class="p-col-2 p-mt-2 p-pl-0">
+                                <img style="width: 250px" [src]="imageDisplay" alt="" />
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </p-card>
+</div>

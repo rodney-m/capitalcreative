@@ -1,0 +1,23 @@
+{
+  "projectType": "library",
+  "root": "libs/contact",
+  "sourceRoot": "libs/contact/src",
+  "prefix": "trogon-energy",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/contact"],
+      "options": {
+        "jestConfig": "libs/contact/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/contact/**/*.ts", "libs/contact/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

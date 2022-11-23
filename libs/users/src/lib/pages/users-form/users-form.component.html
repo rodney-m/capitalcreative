@@ -1,0 +1,54 @@
+<p-toast></p-toast>
+<div class="admin-page">
+    <p-card header="Add User" subheader="You can add users here">
+        <div class="grid mb-5">
+            <div class="col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left"></div>
+                    <div class="p-toolbar-group-right">
+                        <p-button styleClass="p-button-primary mr-2" [label]="'Create'" icon="pi pi-plus"
+                            (click)="onSubmit()"></p-button>
+                        <p-button styleClass="p-button-secondary" label="Cancle" icon="pi pi-arrow-circle-left"
+                            (click)="onCancel()"></p-button>
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="p-grid">
+            <div class="col-12">
+                <form [formGroup]="usersForm">
+                    <div class="p-fluid p-formgrid grid">
+                        <div class="p-field col-6">
+                            <label for="name">First Name</label>
+                            <input formControlName="firstName" id="firstName" type="text" pInputText />
+                            <small *ngIf="userForm['firstName'].invalid && isSubmitted" class="p-error">First name is
+                                required</small>
+                        </div>
+                        <div class="p-field col-6">
+                            <label for="email">Last Name</label>
+                            <input formControlName="lastName" id="lastName" type="text" pInputText />
+                            <small *ngIf="userForm['lastName'].invalid && isSubmitted" class="p-error"> </small>
+                        </div>
+                        
+                        
+                        <div class="p-field col-6">
+                            <label for="password">Username</label>
+                            <input formControlName="username" id="username" type="text" pInputText />
+                            <small *ngIf="userForm['username'].invalid && isSubmitted" class="p-error">Username is
+                                required</small>
+                        </div>
+
+                        <div class="p-field col-6">
+                            <label for="password">Password</label>
+                            <input formControlName="password" id="password" type="password" pInputText />
+                            <small *ngIf="userForm['password'].invalid && isSubmitted" class="p-error">Password is
+                                required</small>
+                        </div>
+
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </p-card>
+</div>

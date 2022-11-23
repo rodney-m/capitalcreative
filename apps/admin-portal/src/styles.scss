@@ -1,0 +1,150 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~primeicons/primeicons.css';
+@import '~primeng/resources/themes/saga-blue/theme.css';
+@import '~primeng/resources/primeng.min.css';
+@import '~animate.css/animate.css';
+@import '~primeflex/primeflex.scss';
+
+// @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    color: #5F6062;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --primary-green: #00864c;
+    --primary-red: #f80301;
+}
+
+.btn{
+    background-color: var(--primary-green)!important;
+    border: none!important;
+    border-radius: 20px;
+}
+
+// dashboard
+.d-item {
+    display: flex;
+    text-align: center;
+    color: var(--surface-0);
+    justify-content: space-between;
+  
+    .pi {
+      font-size: 4em;
+      margin-bottom: 15px;
+    }
+  
+    .name {
+      font-size: 1.4em;
+    }
+  
+    .number {
+      margin-top: 50px;
+      font-size: 2.5em;
+    }
+  }
+  
+  .d-orders {
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 33%);
+  }
+  
+  .d-products {
+    background-color: #4158d0;
+    background-image: linear-gradient(43deg, #4158d0 0%, #c850c0 46%, #ffcc70 100%);
+  }
+  
+  .d-users {
+    background-color: #3eecac;
+    background-image: linear-gradient(19deg, #3eecac 0%, #ee74e1 100%);
+  }
+  
+  .d-totalsales {
+    background-color: #fbda61;
+    background-image: linear-gradient(45deg, #fbda61 0%, #ff5acd 100%);
+  }
+  
+
+
+
+
+// shell 
+.admin {
+    &-wrapper {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+  
+    &-main {
+      width: calc(100% - 250px);
+      margin-left: 250px;
+    }
+  
+    &-sidebar {
+      position: fixed;
+      width: 250px;
+      background-color: #0a1d31;
+      height: 100%;
+      top: 0;
+  
+      .logo {
+        padding: 20px;
+        width: 100%;
+  
+        img {
+          max-width: 100%;
+        }
+      }
+  
+      .links {
+        ul {
+          margin: 0;
+          padding: 0;
+  
+          li {
+            display: block;
+            list-style: none;
+            width: 100%;
+  
+            a {
+              color: var(--surface-a);
+              padding: 10px 15px;
+              display: block;
+              width: 100%;
+              text-decoration: none;
+  
+              &:hover {
+                background-color: var(--blue-700);
+              }
+  
+              i {
+                margin-right: 8px;
+                margin-top: 5px;
+                float: left;
+              }
+  
+              &.logout {
+                color: var(--blue-500);
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    &-page {
+      padding: 15px;
+    }
+  }
+  
